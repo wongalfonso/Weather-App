@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export function getCity(search, date, time) {
-  var url = `http://api.openweathermap.org/data/2.5/weather?q=${search}&units=imperial&APPID=${process.env.API_KEY}`;
+  var url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=imperial&APPID=${process.env.API_KEY}`;
   return (dispatch) => {
     dispatch({
       type: "GET_WEATHER_PENDING"
@@ -15,7 +15,7 @@ export function getCity(search, date, time) {
     })
     .catch((err) => {
       dispatch({
-        type: "GET_WEATHER_ERROR",
+        type: "GET_WEATHER_REJECTED",
         payload: { err, search, date, time }
       })
     })

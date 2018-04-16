@@ -41,7 +41,7 @@ export default function FormReducer(state = defaultState, action) {
       }
       break;
     }
-    case "GET_WEATHER_ERROR": {
+    case "GET_WEATHER_REJECTED": {
       return {
         data: [
           {error: payload.err, date: payload.date, time: payload.time, data: {name: payload.search}},
