@@ -37,6 +37,11 @@ module.exports = {
     new Dotenv({
       path: "./.env",
       safe: true
+    }),
+    new webpack.DefinePlugin({
+      "process.env": {
+        API_KEY : process.env.API_KEY
+      }
     })
-  ]
+  ],
 };
