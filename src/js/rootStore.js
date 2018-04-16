@@ -15,3 +15,4 @@ const rootStore = createStore(
 );
 
 export default rootStore;
+
