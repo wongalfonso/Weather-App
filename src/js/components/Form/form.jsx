@@ -21,7 +21,6 @@ export default class Form extends React.Component {
   }
 
   addEnterKey(e) {
-    console.log(e.code);
     if (e.code === "Enter") {
       this.handleInputButton();
     }
@@ -42,7 +41,6 @@ export default class Form extends React.Component {
   }
 
   handleInput(e) {
-    console.log(e.target.value);
     var value = e.target.value
     value = value.toLowerCase();
     const { dispatch } = this.props;
@@ -53,7 +51,6 @@ export default class Form extends React.Component {
     //input Button
     // e.preventDefault();
     const { input } = this.props;
-    console.log("input", input);
     this.getDate(input);
   }
 

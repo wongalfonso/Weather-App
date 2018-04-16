@@ -34,15 +34,15 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new Dotenv({
-      path: "./.env",
-      safe: true
-    }),
-    new webpack.DefinePlugin({
-      "process.env": {
-        API_KEY : process.env.API_KEY
-      }
-    })
-  ],
+  // plugins: [
+  //   new Dotenv({
+  //     path: "./.env",
+  //     safe: true
+  //   }),
+    // new webpack.DefinePlugin({
+    //   "process.env": {
+    //     API_KEY : process.env.API_KEY
+    //   }
+    // })
+  // ],
 };
