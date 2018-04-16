@@ -7,7 +7,12 @@ const defaultState = {
   cityInput: "",
   throwErr: false,
   success: false,
-  data: [{data: {name: "Search A City...",coord: { lat: "", lon: "" },weather: { 0: { description: "", image: ""} },main: { temp: "", pressure: "", humidity: "", temp_min: "", temp_max: "" },wind: { speed: "" },sys: {country: ""},date: "",time: ""}}],
+  data: [
+    {data: 
+      {name: "Search A City...",
+      coord: { lat: "", lon: "" },
+      weather: { 
+        0: { description: "", image: ""} },main: { temp: "", pressure: "", humidity: "", temp_min: "", temp_max: "" },wind: { speed: "" },sys: {country: ""},date: "",time: ""}}],
   errors: [],
   citySearch: []
 };
