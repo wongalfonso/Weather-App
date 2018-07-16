@@ -1,6 +1,4 @@
 const path = require('path');
-const Dotenv = require("dotenv-webpack");
-const webpack = require("webpack");
 
 module.exports = {
   context: path.join(__dirname, '/src'),
@@ -14,6 +12,7 @@ module.exports = {
     path: path.join(__dirname, '/dist'),
   },
   devtool: "source-map",
+  mode: 'development',
   resolve: {
     alias: {
       react: path.join(__dirname, 'node_modules', 'react')
@@ -32,17 +31,18 @@ module.exports = {
         test: /\.html$/,
         loader: 'file?name=[name].[ext]',
       },
+      {
+        test: /\.less$/,
+        use: [
+          {loader: 'css-loader'},
+          {loader: 'style-loader'},
+          {loader: 'less-loader'}
+        ]
+      },
+      {
+        test: /\.(png|jpg)$/,
+        use: { loader: 'file-loader' }
+      }
     ],
-  },
-  // plugins: [
-  //   new Dotenv({
-  //     path: "./.env",
-  //     safe: true
-  //   }),
-    // new webpack.DefinePlugin({
-    //   "process.env": {
-    //     API_KEY : process.env.API_KEY
-    //   }
-    // })
-  // ],
+  }
 };

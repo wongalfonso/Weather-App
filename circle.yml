@@ -5,4 +5,4 @@ deployment:
       appname: aw-weather-app
 machine:
   node:
-    version: 8.1.4
+    version: 10.6.0

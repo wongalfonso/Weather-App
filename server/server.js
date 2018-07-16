@@ -8,22 +8,18 @@ dotenv.config();
 const app = express();
 
 app.use(morgan('dev'));
-app.use(express.static("dist"));
 app.use(express.static('public'));
+app.use(express.static("dist"));
 
-app.get("weather", (req,res) => {
-  console.log("hello");
-  res.staus(200).send("yass");
-})
 
-app.get("/weather/:input", (req, res) => {
-  console.log(req.params.input);
-  const key = process.env.API_KEY;
+app.get("/weather/:input", (req, res) => {  
   const search = req.params.input;
-  console.log(search);
-  axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=imperial&APPID=${key}`)
-    .then(response => res.send(response.data));
-})
+  axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=imperial&APPID=${process.env.API_KEY}`)
+    .then(response => {      
+      res.send(response.data)
+    })
+    .catch(err => res.send(err.response.data))
+});
 
 
 module.exports = app;
