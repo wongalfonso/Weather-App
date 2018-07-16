@@ -34,14 +34,14 @@ module.exports = {
       {
         test: /\.less$/,
         use: [
+          {loader: 'style-loader'},      
           {loader: 'css-loader'},
-          {loader: 'style-loader'},
-          {loader: 'less-loader'}
+          {loader: 'less-loader'},
         ]
       },
       {
         test: /\.(png|jpg)$/,
-        use: { loader: 'file-loader' }
+        use: { loader: 'url-loader' }
       }
     ],
   }

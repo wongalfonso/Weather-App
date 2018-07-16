@@ -60,7 +60,7 @@ export default class Form extends Component {
     var weatherArr = data.slice(0, 1);
     if (weatherArr[0].data.cod === 200) {
       return (
-        <div id='feedbackSuccess' className='alert alert-success col-12'>
+        <div id='feedbackSuccess' className='alert alert-success col-12 warnings'>
         {weatherArr.map((weather, i) => {
           return (
             <div className='text-center' key={i}>
@@ -73,7 +73,7 @@ export default class Form extends Component {
     } 
     if (weatherArr[0].data.cod === undefined) {
       return (
-        <div></div>
+        <div className = 'warnings'></div>
       )
     }
   }
